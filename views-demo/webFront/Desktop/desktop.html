@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/Desktop-all.css" />
+<script type="text/javascript" src="js/ext-all.js"></script>
+<!-- 引入桌面组件元素 -->
+<!--<script type="text/javascript" src="js/Module.js"></script>
+<script type="text/javascript" src="js/ShortcutModel.js"></script>
+<script type="text/javascript" src="js/StartMenu.js"></script>
+<script type="text/javascript" src="js/TaskBar.js"></script>
+<script type="text/javascript" src="js/Video.js"></script>
+<script type="text/javascript" src="js/Wallpaper.js"></script>
+<script type="text/javascript" src="js/Desktop.js"></script>
+<script type="text/javascript" src="js/App.js"></script>-->
+<!--引入桌面模块元素 -->
+<!--<script type="text/javascript" src="js/modulars/AccordionWindow.js"></script>
+<script type="text/javascript" src="js/modulars/BogusModule.js"></script>
+<script type="text/javascript" src="js/modulars/BogusMenuModule.js"></script>
+<script type="text/javascript" src="js/modulars/GridWindow.js"></script>
+<script type="text/javascript" src="js/modulars/Notepad.js"></script>
+<script type="text/javascript" src="js/modulars/SystemStatus.js"></script>
+<script type="text/javascript" src="js/modulars/TabWindow.js"></script>
+<script type="text/javascript" src="js/modulars/VideoWindow.js"></script>
+<script type="text/javascript" src="js/modulars/Wallpaper.js"></script>
+<script type="text/javascript" src="js/modulars/Settings.js"></script>-->
+<!-- web desktop -->
+<!--<script type="text/javascript" src="js/modulars/App.js"></script>-->
+
+<script type="text/javascript">
+	Ext.Loader.setPath({   //Ext.Loader.setPath() : Sets the path of a namespace
+		'Ext.ux.desktop': 'js',
+		'Desktop': 'js/modulars',
+		'Desktop.model':'js/modulars'
+	});
+	Ext.require('Desktop.App');
+	var desktopApp;
+	Ext.onReady(function() {
+		desktopApp = new Desktop.App();
+	});
+</script>
+
+<title>应用管理系统</title>
+</head>
+<body>
+</body>
+</html>

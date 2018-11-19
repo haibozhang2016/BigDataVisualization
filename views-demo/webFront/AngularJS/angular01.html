@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<script type="text/javascript" src="js/angular.1.6.2.min.js"></script>
+<script type="text/javascript" src="js/Hello.js" ></script>
+<body ng-app="app1" style="margin-left: 10px;">
+	<br />
+	<div ng-controller="HelloAngular">
+		<input ng-model="greeting.text" />
+		<!--<p>{{greeting.text}}, Angular</p>-->
+		<p><span ng-bind="greeting.text"></span>, Angular</p>
+	</div>
+	<br />
+</body>
+</html>

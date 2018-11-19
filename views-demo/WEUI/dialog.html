@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<title>WeUI</title>
+<link rel="stylesheet" href="css/weui-0.4.3.css"/>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<script>   
+$(function(){
+
+    $('#showDialog_1').click(function(){
+        dialog('这是标题','这里是内容',function(){
+           alert("这里放你想做的相应操作！");
+           $('#dialog1').remove();
+        });
+     });
+
+     $('#showDialog_2').click(function(){
+        dialog('第二种标题','第二种内容');
+     });
+
+     function dialog(title, msg, callback){
+        var dialog1, dialog2;
+        dialog1 = '\
+           <div class="weui_dialog_confirm" id="dialog1" style="display: none;">\
+              <div class="weui_mask"></div>\
+              <div class="weui_dialog">\
+                  <div class="weui_dialog_hd"><strong class="weui_dialog_title">' + title + '</strong></div>\
+                  <div class="weui_dialog_bd">' + msg + '</div>\
+                  <div class="weui_dialog_ft">\
+                      <a href="javascript:;" class="weui_btn_dialog default">取消</a>\
+                      <a href="javascript:;" class="weui_btn_dialog primary">确定</a>\
+                  </div>\
+              </div>\
+           </div>\
+        ';
+        dialog2 = '\
+           <div class="weui_dialog_confirm" id="dialog2" style="display: none;">\
+              <div class="weui_mask"></div>\
+              <div class="weui_dialog">\
+                  <div class="weui_dialog_hd"><strong class="weui_dialog_title">' + title + '</strong></div>\
+                  <div class="weui_dialog_bd">' + msg + '</div>\
+                  <div class="weui_dialog_ft">\
+                      <a href="javascript:;" class="weui_btn_dialog primary">确定</a>\
+                  </div>\
+              </div>\
+           </div>\
+        ';
+        if(arguments[2]){
+           $('body').append(dialog1);
+           $('#dialog1').fadeIn('fast');
+           $('#dialog1 .primary').on('click',function(){
+               callback();   
+           });
+           $('#dialog1 .default').on('click',function(){
+               $('#dialog1').fadeOut('fast',function(){
+                  $('#dialog1').remove(); 
+               });
+           });
+        }else{
+           if(!$('#dialog2').length){
+               $('body').append(dialog2);
+           }else{
+               $('#dialog2.weui_dialog_title').html(title);
+               $('#dialog2.weui_dialog_bd').html(msg);
+           }
+           $('#dialog2').fadeIn('fast');
+           $('#dialog2 .primary').on('click',function(){
+               $('#dialog2').fadeOut('fast');
+           });
+        }
+     }
+
+})
+</script>
+
+</head>
+<body ontouchstart>
+
+  <div class="bd">
+     <h1 class="page_title">Dialog</h1>
+  </div>
+
+  <div class="bd spacing">
+     <div class="weui_cells">
+        <div class="weui_cell">
+            <button href="javascript:;" class="weui_btn weui_btn_primary" id="showDialog_1">点击弹出Dialog样式一</button>
+        </div>
+        <div class="weui_cell">
+            <a href="javascript:;" class="weui_btn weui_btn_primary" id="showDialog_2">点击弹出Dialog样式二</a>
+        </div>
+     </div>
+  </div>
+
+</body>
+</html>

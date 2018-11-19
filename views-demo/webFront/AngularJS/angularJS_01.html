@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<meta charset="utf-8" />
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script type="text/javascript" src="js/angular.1.6.2.min.js" ></script>
+</head>
+<body style="padding:10px;" ng-controller="TaskCtrl" ng-app="todoList">
+	<div class="input-group">
+		<input type="text" class="form-control" ng-model="task"/>
+		<span class="input-group-btn">
+			<button class="btn btn-default" ng-click="add()">提交</button>
+		</span>
+	</div>
+	<h4 ng-if="tasks.length>0">任务列表</h4>
+	<ul class="list-group" ng-if="tasks.length > 0">
+		<li class="list-group-item" ng-repeat="item in tasks track by $index">
+			{{item}}
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<span ng-click="tasks.splice($index,1)" style="font-zize:11px;color:red">点击删除</span>
+		</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	angular.module("todoList",[])
+	.controller("TaskCtrl",function($scope){
+		$scope.task = "";
+		$scope.tasks = [];
+		$scope.add = function(){
+			$scope.tasks.push($scope.task);
+		}
+	})
+</script>
+
+<!--<body>
+	<p>名字：<input type="text" ng-model="name1"/></p>
+	<h1>Hello {{name1}}</h1>
+	<div ng-app="" ng-init="person={firstName:'zhang',lastName:'dan'}">
+		<span ng-bind="person.firstName"></span>
+	</div>
+	<div ng-app="" ng-init="name=['jani','Hege','Kai']">
+		<ul>
+			<li ng-repeat="item in name">
+				{{item}}
+			</li>
+		</ul>
+	</div>
+</body>-->
+
+</html>

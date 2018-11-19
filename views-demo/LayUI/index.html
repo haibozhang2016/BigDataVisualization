@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="dist/layui.all.js" ></script>
+		<link rel="stylesheet" href="dist/css/layui.css" />-->
+		<script type="text/javascript" src="js/juery-min-1.11.0.js" ></script>
+	    <script type="text/javascript" src="layui/dist/layui.all.js" ></script>
+	    <link rel="stylesheet" href="layui/dist/css/layui.css" />
+	</head>
+	<body>
+		<button onclick="logout()">退出系统</button>
+	</body>
+	<script type="text/javascript">
+		function logout(){
+			layer.msg('你确定你很帅么？', {
+			  time: 0 //不自动关闭
+			  ,btn: ['必须啊', '丑到爆']
+			  ,yes: function(index){
+			    layer.close(index);
+			  }
+			});
+		}
+	</script>
+</html>

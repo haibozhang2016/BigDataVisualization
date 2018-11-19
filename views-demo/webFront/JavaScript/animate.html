@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="css/animate.css" />
+<script>
+var id;
+var left = 0;
+
+function move(elem) {
+  var flag = true;
+  
+  function frame() {
+    if(flag){
+    	left++;  //update parameters 
+    }else{
+    	left--;
+    }
+    elem.style.left = left + 'px'; //show frame 
+    if (left == 180){ //check finish condition
+    	flag = false;
+    }else if(left == 0){
+    	flag = true;
+    }
+  }
+  id = setInterval(frame, 20); //draw every 10ms
+}
+function stopAnimation(){
+	if(id != null && id != undefined && id != "undefined"){
+		clearInterval(id);
+	}
+}
+function startAnimation(elem){
+	move(elem);
+}
+</script>
+</head>
+<body>
+<div onclick="move(this.children[0])" class="example_path"
+	onmouseout="startAnimation(this.children[0])" onmouseover="stopAnimation()">
+	<div class="example_block"></div>
+</div>
+</body>
+</html>

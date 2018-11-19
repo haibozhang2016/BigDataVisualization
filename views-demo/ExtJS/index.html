@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/classic/theme-gray/resources/theme-gray-all.css"/>
+<script type="text/javascript" src="js/ext-all.js" ></script>
+<style type="text/css">
+	*{
+		font-size: 16px;
+	}
+</style>
+<script type="text/javascript">
+	Ext.onReady(function(){
+		//Ext.MessageBox.wait("数据加载中...", "提示信息");
+		Ext.create("Ext.container.Viewport",{
+			height: '100%',
+			width: '100%',
+			layout: 'border',
+			margin:'10 10 10 10',
+			frame: true,
+			border: true,
+			items:[{
+				xtype: 'panel',
+				region: 'west',
+				header:false,
+				frame: true,
+				border: true,
+				split:false,
+				flex: 1,
+				layout:'border',
+				items:[{
+					xtype: 'panel',
+					title:'上半部分',
+					region: 'north',
+					frame: false,
+					border: true,
+					flex: 1,
+				},{
+					xtype: 'panel',
+					title:'下半部分',
+					region: 'center',
+					frame: false,
+					border: true,
+					flex: 1,
+				}]
+			},{
+				xtype: 'panel',
+				region: 'center',
+				title:'文章内容',
+				frame: true,
+				border: true,
+				flex: 4,
+				buttons: [
+			        { xtype: "button", text: "确定", handler: function () { this.up("window").close(); } },
+			        { xtype: "button", text: "取消", handler: function () { this.up("window").close(); } }
+			    ]
+			}]
+			
+		})
+		
+//		var win = Ext.create("Ext.window.Window", {
+//		    id: "myWin",
+//		    title: "示例窗口",
+//		    constrain: true,
+//		    width: document.body.clientWidth,
+//		    height: 400,
+//		    layout: "fit",
+//		    items: [],
+//		    buttons: [
+//		        { xtype: "button", text: "确定", handler: function () { this.up("window").close(); } },
+//		        { xtype: "button", text: "取消", handler: function () { this.up("window").close(); } }
+//		    ]
+//		}).show();
+	})
+</script>
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+</body>
+</html>

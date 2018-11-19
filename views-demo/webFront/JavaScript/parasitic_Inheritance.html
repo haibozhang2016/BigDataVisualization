@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+	function SuperType(name){
+		this.name = name;
+		this.colors = ['red','green', 'black'];
+	}
+	function SubType(name, age){
+		SuperType.call(this, name); //第二次调用SubType()
+		this.age = age;
+	}
+	SuperType.prototype.sayName = function(){
+		console.log("name: " + this.name);
+	}
+//	SubType.prototype = new SuperType(); //第一次调用SubType()
+//	SubType.prototype.constructor = SubType;
+	function inheritPrototype(subType, superType){ //寄生式继承
+		var prototype = Object(superType.prototype);
+		prototype.constructor = superType;
+		subType.prototype = prototype;
+	}
+	inheritPrototype(SubType, SuperType);
+	SubType.prototype.sayAge = function(){
+		console.log("age: " + this.age);
+	}
+	var instance1 = new SubType("chocolate", "19");
+	console.log("colors: " + instance1.colors);
+	instance1.sayName();
+	instance1.sayAge();
+	
+
+	
+</script>
+</head>
+<body>
+</body>
+</html>

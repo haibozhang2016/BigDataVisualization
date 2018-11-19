@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript" src="js/vue.js" ></script>
+<style type="text/css">
+	#itempannel{
+	  height: 100%;
+	  position: absolute;
+	  left: 0px;
+	  z-index: 2;
+	  background: #F7F9FB;
+	  width: 200px;
+	  padding-top: 8px;
+	  border-right: 1px solid #E6E9ED;
+	}
+	#itempannel ul{
+	  padding: 0px;
+	  padding-left: 16px;
+	}
+	#itempannel li{
+	  color: rgba(0,0,0,0.65);
+	  border-radius: 4px;
+	  width: 160px;
+	  height: 28px;
+	  line-height: 26px;
+	  padding-left: 8px;
+	  border: 1px solid rgba(0,0,0,0);
+	  list-style-type: none;
+	}
+	#itempannel .pannel-type-icon{
+	  width: 16px;
+	  height: 16px;
+	  display: inline-block;
+	  vertical-align: middle;
+	  margin-right: 8px;
+	  background: url(https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg)
+	}
+	#itempannel li:hover{
+	  background: white;
+	  border: 1px solid #CED4D9;
+	  cursor: move;
+	}
+</style>
+<title></title>
+</head>
+<body>
+	<div id="app-2">
+	   	<span v-bind:title="message">
+	     	鼠标悬停几秒钟查看此处动态绑定的提示信息！
+	  	 </span>
+	</div>
+	<div id="app-3">
+		<img src="img/start.svg" />
+		<img src="img/model.svg" />
+		<img src="img/fork.svg" />
+		<img src="img/end.svg" />
+		<img src="img/grey-model.svg" />
+	</div>
+	<div id="itempannel">
+      <ul>
+        <li>
+          <span class="pannel-type-icon"></span>K 均值聚类
+        </li>
+        <li>
+          <span class="pannel-type-icon"></span>随机森林
+        </li>
+        <li>
+          <span class="pannel-type-icon"></span>PS-SMART分类
+        </li>
+        <li>
+          <span class="pannel-type-icon"></span>读数据表
+        </li>
+        <li>
+          <span class="pannel-type-icon"></span>朴素贝叶斯
+        </li>
+      </ul>
+    </div>
+</body>
+<script type="text/javascript">
+	var app2 = new Vue({
+	  el: '#app-2',
+	  data: {
+	    message: '页面加载于 ' + new Date().toLocaleString()
+	  }
+	})
+</script>
+</html>

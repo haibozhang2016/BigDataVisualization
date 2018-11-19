@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://cdn.bootcss.com/angular.js/1.6.6/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<h1>姓氏为 {{lastname}} 家族成员:</h1>
+		<ul>
+			<li ng-repeat="x in names">{{x}} {{lastname}}</li>
+		</ul>
+	</div>
+	<div id="myApp2" ng-app="myApp2" ng-controller="myCtrl">
+		<h1>myApp2 姓氏为 {{lastname}} 家族成员:</h1>
+		<ul>
+			<li ng-repeat="x in names">{{x}}</li>
+		</ul>
+	</div>
+	<div id="myApp3" ng-app="myApp3" ng-controller="myCtrl">
+		<h1>myApp3 姓氏为 {{lastname}} 家族成员:</h1>
+		<input type="button" value="rootScope共享" ng-click="say()"></input>
+	</div>
+</body>
+
+<script type="text/javascript">
+
+	var app = angular.module('myApp', []);  
+	app.controller('myCtrl', function($scope, $rootScope) {  
+	    $scope.names = ["Emil", "Tobias", "Linus"];  
+	    $rootScope.lastname = "Refsnes";  
+	});  
+	      
+	var app2 = angular.module('myApp2', []);  
+	app2.controller('myCtrl', function($scope, $rootScope) {  
+	    $scope.names = ["Emil2", "Tobias2", "Linus2"];  
+	    $rootScope.lastname = "Refsnes--2";  
+	});  
+	  
+	var app3 = angular.module('myApp3', []);  
+	app3.controller('myCtrl', function($scope, $rootScope) {  
+	    $rootScope.lastname = "Refsnes--3";  
+	    $rootScope.say = function(){  
+	        $rootScope.lastname = "Refsnes---";  
+	    }  
+	});  
+	  
+	//手动加载myApp2 ng-app  
+	angular.bootstrap(document.getElementById("myApp2"), ['myApp2']);  
+	angular.bootstrap(document.getElementById("myApp3"), ['myApp3']);
+	
+</script>
+</html>

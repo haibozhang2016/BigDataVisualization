@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script type="text/javascript" src="js/angular.1.6.2.min.js"></script>
+<style type="text/css">
+	.myApp{
+		margin-left:10px;
+		margin-top:10px;
+	}
+</style>
+</head>
+<body ng-app="myApp" ng-init="quantity=1;price=5">
+	<!--directive:oooo-->
+	<div ng-controller="repeatCtrl" class="myApp">
+	  <input type="number" ng-model="quantity">
+	  <p ng-bind="info"></p>
+	  <ul>
+	  	<li ng-repeat="item in names">
+	  		<span ng-bind="item.name" ></span> : <span ng-bind="item.country"></span>
+	  	</li>
+	  </ul>
+	</div>
+	<oooo></oooo>
+	<div ng-controller="myCtrl">
+		<!--<select ng-options="x for x in names" ng-model="selectName" ng-init="selectName=names[0]"></select>-->
+		<select>
+			<option ng-repeat="x in names">{{x}}</option>
+		</select>
+	</div>
+	
+	<div ng-app="" ng-init="mySwitch=true">
+		<button ng-disabled="mySwitch">点我</button>
+		<input type="checkbox" ng-model="mySwitch" />按钮
+		<span>{{mySwitch}}</span>
+	</div>
+	
+	<form>
+		<input type="checkbox" ng-model="myVal" />显示标题
+	</form>
+	<div ng-show="myVal">标题在此，天下我有~</div>
+	
+	<input type="radio" ng-model="myVar" value="dogs"/>dogs
+	<input type="radio" ng-model="myVar" value="tuts"/>tuts
+	<input type="radio" ng-model="myVar" value="cars"/>cars
+	
+	<form>
+		<select ng-model="myVar">
+			<option value="dogs">dogs</option>
+			<option value="tuts">tuts</option>
+			<option value="cars">cars</option>
+		</select>
+	</form>
+	
+	<div ng-switch="myVar">
+		<div ng-switch-when="dogs">
+			<h1>dogs</h1>
+			<p>Welcome to a world of dogs.</p>
+		</div>
+		<div ng-switch-when="tuts">
+			<h1>Tutorials</h1>
+			<p>Learn from examples.</p>
+		</div>
+		<div ng-switch-when="cars">
+			<h1>Cars</h1>
+			<p>Read about cars.</p>
+		</div>
+	</div>
+	
+	<div ng-controller="myController">
+		name:<input type="text" ng-model="first"/>
+	         <input type="text" ng-model="last"/>
+	         <button ng-click="updateMessage()">Message</button>
+			{{heading + message}}
+	</div>
+	
+</body>
+<script type="text/javascript">
+	var myApp = angular.module("myApp", []);
+	myApp.controller("repeatCtrl",['$scope', function($scope, $rootScope){
+		$scope.names = [
+			{name:'Jani',country:'Norway'},
+			{name:'Hege',country:'Sweden'},
+			{name:'Kai',country:'Denmark'}
+		]
+		$scope.info = "循环清单信息";
+	}])
+	myApp.directive("oooo", function(){
+		return {
+			restrict: 'M',
+			replace : true,
+			template: '<div style="color:red">自定义指令</div>'
+		};
+	})
+	
+	myApp.controller('myCtrl', function($scope, $http) {
+	    $scope.names = ["Google", "Runoob", "Taobao"];
+	    
+	    $http({
+			method:'GET',
+			url: 'http://www.baidu.com'
+		}).then(function successCallback(response){
+			console.log(response)
+		}, function errorCallback(response){
+			console.log(response)
+		})
+	});
+	
+	myApp.controller("myController", function($scope){
+		$scope.first = "Some";
+		$scope.last = "One";
+		$scope.heading = "Message: ";
+		$scope.updateMessage = function(){
+			$scope.message = "hello " + $scope.first + " " + $scope.last + "！";
+		}
+		$scope.updateMessage();
+	})
+		
+	
+	//$http.post('/someUrl', data, config).then(successCallback, errorCallback);
+	
+</script>
+</html>

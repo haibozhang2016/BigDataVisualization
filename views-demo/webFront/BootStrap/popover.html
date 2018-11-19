@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<!-- 引入bootstrap样式 -->
+<link rel="stylesheet" href="css/bootstrap.min.css"  />
+<!-- 引入font-awesome样式 -->
+<!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
+<!-- 引入jquery,必须在引入bootstrap.min.js之前引入 -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+<!-- 引入bootstrap.min.js -->
+<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+<title></title>
+</head>
+<body>
+	<br/>
+	<button class="btn btn-success">启动hadoop</button>
+	<button class="btn btn-primary">停止hadoop</button>
+	<button class="btn">示例</button>
+	<div class="container" style="padding: 100px 50px 10px 200px;" >
+		<button type="button" class="btn btn-default" title="Popover title"  
+				data-container="body" data-toggle="popover" data-placement="left" 
+				data-content="左侧的 Popover 中的一些内容">
+			左侧的 Popover
+		</button>
+		<button type="button" class="btn btn-primary" title="Popover title"  
+				data-container="body" data-toggle="popover" data-placement="top" 
+				data-content="顶部的 Popover 中的一些内容">
+			顶部的 Popover
+		</button>
+		<button type="button" class="btn btn-success" title="Popover title"  
+				data-container="body" data-toggle="popover" data-placement="bottom" 
+				data-content="底部的 Popover 中的一些内容">
+			底部的 Popover
+		</button>
+		<button type="button" class="btn btn-warning" title="Popover title"  
+				data-container="body" data-toggle="popover" data-placement="right" 
+				data-content="右侧的 Popover 中的一些内容">
+			右侧的 Popover
+		</button>
+	</div>
+	<script>
+		$(function () { 
+			/*$("[data-toggle='popover']").popover();*/
+		});
+	</script>
+</body>
+</html>

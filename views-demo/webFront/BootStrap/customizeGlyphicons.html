@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Customize Glyphicons</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css" media="screen" />
+		<script type="text/javascript" src="js/jquery2.2.4.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			body {
+				padding-top: 70px
+			}
+			
+			#red,
+			#green,
+			#blue {
+				float: left;
+				clear: left;
+				width: 300px;
+				margin: 15px;
+			}
+			
+			#swatch {
+				width: 120px;
+				height: 100px;
+				margin-top: 18px;
+				margin-left: 350px;
+				background-image: none;
+			}
+			
+			#red .ui-slider-range {
+				background: #ef2929;
+			}
+			
+			#red .ui-slider-handle {
+				border-color: #ef2929;
+			}
+			
+			#green .ui-slider-range {
+				background: #8ae234;
+			}
+			
+			#green .ui-slider-handle {
+				border-color: #8ae234;
+			}
+			
+			#blue .ui-slider-range {
+				background: #729fcf;
+			}
+			
+			#blue .ui-slider-handle {
+				border-color: #729fcf;
+			}
+			
+			input {
+				margin-top: 5px
+			}
+			
+			#code {
+				background-color: #c6e4f0;
+				padding: 7px
+			}
+			
+			.navbar-w3r {
+				background: #4c4c4c;
+				/* Old browsers */
+				background: -moz-linear-gradient(top, #4c4c4c 5%, #595959 12%, #4c4c4c 18%, #2c2c2c 50%, #131313 100%);
+				/* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #4c4c4c), color-stop(12%, #595959), color-stop(18%, #4c4c4c), color-stop(50%, #2c2c2c), color-stop(100%, #131313));
+				/* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #4c4c4c 5%, #595959 12%, #4c4c4c 18%, #2c2c2c 50%, #131313 100%);
+				/* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #4c4c4c 5%, #595959 12%, #4c4c4c 18%, #2c2c2c 50%, #131313 100%);
+				/* Opera 11.10+ */
+				background: -ms-linear-gradient(top, #4c4c4c 5%, #595959 12%, #4c4c4c 18%, #2c2c2c 50%, #131313 100%);
+				/* IE10+ */
+				background: linear-gradient(to bottom, #4c4c4c 5%, #595959 12%, #4c4c4c 18%, #2c2c2c 50%, #131313 100%);
+				/* W3C */
+				filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0);
+				/* IE6-9 */
+			}
+		</style>
+	</head>
+
+	<body class="ui-widget-content" style="border: 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<h3>Font Size</h3>
+					<div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+						<a class="ui-slider-handle ui-state-default ui-corner-all" href="http://www.runoob.com/try/demo_source/bootstrap-glyph-customization.htm#" style="left: 30%;"></a>
+					</div>
+					<p id="slider-value"></p>
+				</div>
+				<div class="col-lg-6">
+					<h3>Color</h3>
+					<div id="red" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+						<div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 100%;"></div>
+						<a class="ui-slider-handle ui-state-default ui-corner-all" href="http://www.runoob.com/try/demo_source/bootstrap-glyph-customization.htm#" style="left: 100%;"></a>
+					</div>
+					<div id="green" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+						<div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 54.902%;"></div>
+						<a class="ui-slider-handle ui-state-default ui-corner-all" href="http://www.runoob.com/try/demo_source/bootstrap-glyph-customization.htm#" style="left: 54.902%;"></a>
+					</div>
+					<div id="blue" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+						<div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 23.5294%;"></div>
+						<a class="ui-slider-handle ui-state-default ui-corner-all" href="http://www.runoob.com/try/demo_source/bootstrap-glyph-customization.htm#" style="left: 23.5294%;"></a>
+					</div>
+					<div id="swatch" class="ui-widget-content ui-corner-all" style="background-color: rgb(255, 140, 60);"></div>
+				</div>
+				<div class="col-lg-3">
+					<h3>Text shadow</h3>
+					<form class="form-inline" role="form">
+						<div class="form-group">
+							<label class="sr-only" for="offsetx">Offset X</label>
+							<input type="text" class="form-control" id="offsetx" placeholder="Enter offset-x, e.g. 2">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="offsety">Offset Y</label>
+							<input type="text" class="form-control" id="offsety" placeholder="Enter offset-y, e.g. 2">
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="blur">Blur distance</label>
+							<input type="text" class="form-control" id="blur" placeholder="Enter blur distance, e.g. 2">
+						</div>
+						<div style="width: 100%">
+							Select color <input type="color" id="color" value="#000000" list="colors">
+							<div class="alert alert-error" style="display:none;">input[type=color] is not available on your browser</div>
+							<datalist id="colors">
+<option>#ff0000</option>
+<option>#0000ff</option>
+<option>#00ff00</option>
+<option>#ffff00</option>
+<option>#00ffff</option>
+<option>#f00</option> 
+<option>red</option> 
+</datalist>
+							<script>
+								if(!Modernizr.inputtypes.color) {
+									document.querySelector('#color').style.display = 'none';
+									document.querySelector('#colors').previousElementSibling.style.display = 'block';
+								}
+							</script>
+						</div>
+						<button type="button" class="btn btn-success" style="margin: 10px 0 10px 0" onclick="CreateShadow();">Generate Text Shadow</button>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<p id="code" style="display: none"></p>
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<td><span class="glyphicon glyphicon-asterisk" style="color: rgb(255, 140, 60);"> Asterik</span></td>
+								<td><span class="glyphicon glyphicon-plus" style="color: rgb(255, 140, 60);"> Plus</span></td>
+								<td><span class="glyphicon glyphicon-euro" style="color: rgb(255, 140, 60);"> Euro</span></td>
+								<td><span class="glyphicon glyphicon-envelope" style="color: rgb(255, 140, 60);"> Envelope</span></td>
+								<td><span class="glyphicon glyphicon-pencil" style="color: rgb(255, 140, 60);"> Pencil</span></td>
+								<td><span class="glyphicon glyphicon-glass" style="color: rgb(255, 140, 60);"> Glass</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-music" style="color: rgb(255, 140, 60);"> Music</span></td>
+								<td><span class="glyphicon glyphicon-search" style="color: rgb(255, 140, 60);"> Search</span></td>
+								<td><span class="glyphicon glyphicon-heart" style="color: rgb(255, 140, 60);"> Heart</span></td>
+								<td><span class="glyphicon glyphicon-star" style="color: rgb(255, 140, 60);"> Star</span></td>
+								<td><span class="glyphicon glyphicon-star-empty" style="color: rgb(255, 140, 60);"> Empty</span></td>
+								<td><span class="glyphicon glyphicon-user" style="color: rgb(255, 140, 60);"> User</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-film" style="color: rgb(255, 140, 60);"> Film</span></td>
+								<td><span class="glyphicon glyphicon-th-large" style="color: rgb(255, 140, 60);"> Th large</span></td>
+								<td><span class="glyphicon glyphicon-th" style="color: rgb(255, 140, 60);"> Th</span></td>
+								<td><span class="glyphicon glyphicon-th-list" style="color: rgb(255, 140, 60);"> List</span></td>
+								<td><span class="glyphicon glyphicon-ok" style="color: rgb(255, 140, 60);"> Okay</span></td>
+								<td><span class="glyphicon glyphicon-remove" style="color: rgb(255, 140, 60);"> Remove</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-zoom-in" style="color: rgb(255, 140, 60);"> Zoom in</span></td>
+								<td><span class="glyphicon glyphicon-zoom-out" style="color: rgb(255, 140, 60);"> Zoom out</span></td>
+								<td><span class="glyphicon glyphicon-off" style="color: rgb(255, 140, 60);"> Off</span></td>
+								<td><span class="glyphicon glyphicon-signal" style="color: rgb(255, 140, 60);"> Signal</span></td>
+								<td><span class="glyphicon glyphicon-cog" style="color: rgb(255, 140, 60);"> Cog</span></td>
+								<td><span class="glyphicon glyphicon-trash" style="color: rgb(255, 140, 60);"> Trash</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-home" style="color: rgb(255, 140, 60);"> Home</span></td>
+								<td><span class="glyphicon glyphicon-file" style="color: rgb(255, 140, 60);"> File</span></td>
+								<td><span class="glyphicon glyphicon-time" style="color: rgb(255, 140, 60);"> Time</span></td>
+								<td><span class="glyphicon glyphicon-road" style="color: rgb(255, 140, 60);"> Road</span></td>
+								<td><span class="glyphicon glyphicon-download-alt" style="color: rgb(255, 140, 60);"> Download alt</span></td>
+								<td><span class="glyphicon glyphicon-download" style="color: rgb(255, 140, 60);"> Download</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-upload" style="color: rgb(255, 140, 60);"> Upload</span></td>
+								<td><span class="glyphicon glyphicon-inbox" style="color: rgb(255, 140, 60);"> Inbox</span></td>
+								<td><span class="glyphicon glyphicon-play-circle" style="color: rgb(255, 140, 60);"> Play circle</span></td>
+								<td><span class="glyphicon glyphicon-repeat" style="color: rgb(255, 140, 60);"> Repeat</span></td>
+								<td><span class="glyphicon glyphicon-refresh" style="color: rgb(255, 140, 60);"> Refresh</span></td>
+								<td><span class="glyphicon glyphicon-list-alt" style="color: rgb(255, 140, 60);"> List alt</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-lock" style="color: rgb(255, 140, 60);"> Lock</span></td>
+								<td><span class="glyphicon glyphicon-flag" style="color: rgb(255, 140, 60);"> Flag</span></td>
+								<td><span class="glyphicon glyphicon-headphones" style="color: rgb(255, 140, 60);"> Headphones</span></td>
+								<td><span class="glyphicon glyphicon-volume-off" style="color: rgb(255, 140, 60);"> Volume-off</span></td>
+								<td><span class="glyphicon glyphicon-volume-down" style="color: rgb(255, 140, 60);"> Volume-down</span></td>
+								<td><span class="glyphicon glyphicon-volume-up" style="color: rgb(255, 140, 60);"> Volume-up</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-qrcode" style="color: rgb(255, 140, 60);"> Qrcode</span></td>
+								<td><span class="glyphicon glyphicon-barcode" style="color: rgb(255, 140, 60);"> Barcode</span></td>
+								<td><span class="glyphicon glyphicon-tag" style="color: rgb(255, 140, 60);"> Tag</span></td>
+								<td><span class="glyphicon glyphicon-tags" style="color: rgb(255, 140, 60);"> Tags</span></td>
+								<td><span class="glyphicon glyphicon-book" style="color: rgb(255, 140, 60);"> Book</span></td>
+								<td><span class="glyphicon glyphicon-bookmark" style="color: rgb(255, 140, 60);"> Bookmark</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-print" style="color: rgb(255, 140, 60);"> Print</span></td>
+								<td><span class="glyphicon glyphicon-camera" style="color: rgb(255, 140, 60);"> Camera</span></td>
+								<td><span class="glyphicon glyphicon-font" style="color: rgb(255, 140, 60);"> Font</span></td>
+								<td><span class="glyphicon glyphicon-bold" style="color: rgb(255, 140, 60);"> Bold</span></td>
+								<td><span class="glyphicon glyphicon-italic" style="color: rgb(255, 140, 60);"> Italic</span></td>
+								<td><span class="glyphicon glyphicon-text-height" style="color: rgb(255, 140, 60);"> Text-height</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-text-width" style="color: rgb(255, 140, 60);"> Text-width</span></td>
+								<td><span class="glyphicon glyphicon-align-left" style="color: rgb(255, 140, 60);"> Align-left</span></td>
+								<td><span class="glyphicon glyphicon-align-center" style="color: rgb(255, 140, 60);"> Align-center</span></td>
+								<td><span class="glyphicon glyphicon-align-right" style="color: rgb(255, 140, 60);"> Align-right</span></td>
+								<td><span class="glyphicon glyphicon-align-justify" style="color: rgb(255, 140, 60);"> Align-justify</span></td>
+								<td><span class="glyphicon glyphicon-list" style="color: rgb(255, 140, 60);"> List</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-indent-left" style="color: rgb(255, 140, 60);"> Indent-left</span></td>
+								<td><span class="glyphicon glyphicon-indent-right" style="color: rgb(255, 140, 60);"> Indent-right</span></td>
+								<td><span class="glyphicon glyphicon-facetime-video" style="color: rgb(255, 140, 60);"> Facetime-video</span></td>
+								<td><span class="glyphicon glyphicon-picture" style="color: rgb(255, 140, 60);"> Picture</span></td>
+								<td><span class="glyphicon glyphicon-map-marker" style="color: rgb(255, 140, 60);"> Map-marker</span></td>
+								<td><span class="glyphicon glyphicon-adjust" style="color: rgb(255, 140, 60);"> Adjust</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-tint" style="color: rgb(255, 140, 60);"> Tint</span></td>
+								<td><span class="glyphicon glyphicon-edit" style="color: rgb(255, 140, 60);"> Edit</span></td>
+								<td><span class="glyphicon glyphicon-share" style="color: rgb(255, 140, 60);"> Share</span></td>
+								<td><span class="glyphicon glyphicon-check" style="color: rgb(255, 140, 60);"> Check</span></td>
+								<td><span class="glyphicon glyphicon-move" style="color: rgb(255, 140, 60);"> Move</span></td>
+								<td><span class="glyphicon glyphicon-step-backward" style="color: rgb(255, 140, 60);"> Step-backward</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-fast-backward" style="color: rgb(255, 140, 60);"> Fast-backward</span></td>
+								<td><span class="glyphicon glyphicon-backward" style="color: rgb(255, 140, 60);"> Backward</span></td>
+								<td><span class="glyphicon glyphicon-play" style="color: rgb(255, 140, 60);"> Play</span></td>
+								<td><span class="glyphicon glyphicon-pause" style="color: rgb(255, 140, 60);"> Pause</span></td>
+								<td><span class="glyphicon glyphicon-stop" style="color: rgb(255, 140, 60);"> Stop</span></td>
+								<td><span class="glyphicon glyphicon-forward" style="color: rgb(255, 140, 60);"> Forward</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-fast-forward" style="color: rgb(255, 140, 60);"> Fast-forward</span></td>
+								<td><span class="glyphicon glyphicon-step-forward" style="color: rgb(255, 140, 60);"> Step-forward</span></td>
+								<td><span class="glyphicon glyphicon-eject" style="color: rgb(255, 140, 60);"> Eject</span></td>
+								<td><span class="glyphicon glyphicon-chevron-left" style="color: rgb(255, 140, 60);"> Chevron-left</span></td>
+								<td><span class="glyphicon glyphicon-chevron-right" style="color: rgb(255, 140, 60);"> Chevron-right</span></td>
+								<td><span class="glyphicon glyphicon-plus-sign" style="color: rgb(255, 140, 60);"> Plus-sign</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-minus-sign" style="color: rgb(255, 140, 60);"> Minus-sign</span></td>
+								<td><span class="glyphicon glyphicon-remove-sign" style="color: rgb(255, 140, 60);"> Remove-sign</span></td>
+								<td><span class="glyphicon glyphicon-ok-sign" style="color: rgb(255, 140, 60);"> Ok-sign</span></td>
+								<td><span class="glyphicon glyphicon-question-sign" style="color: rgb(255, 140, 60);"> Question-sign</span></td>
+								<td><span class="glyphicon glyphicon-info-sign" style="color: rgb(255, 140, 60);"> Info-sign</span></td>
+								<td><span class="glyphicon glyphicon-screenshot" style="color: rgb(255, 140, 60);"> Screenshot</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-remove-circle" style="color: rgb(255, 140, 60);"> Remove-circle</span></td>
+								<td><span class="glyphicon glyphicon-ok-circle" style="color: rgb(255, 140, 60);"> Ok-circle</span></td>
+								<td><span class="glyphicon glyphicon-ban-circle" style="color: rgb(255, 140, 60);"> Ban-circle</span></td>
+								<td><span class="glyphicon glyphicon-arrow-left" style="color: rgb(255, 140, 60);"> Arrow-left</span></td>
+								<td><span class="glyphicon glyphicon-arrow-right" style="color: rgb(255, 140, 60);"> Arrow-right</span></td>
+								<td><span class="glyphicon glyphicon-arrow-up" style="color: rgb(255, 140, 60);"> Arrow-up</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-arrow-down" style="color: rgb(255, 140, 60);"> Arrow-down</span></td>
+								<td><span class="glyphicon glyphicon-share-alt" style="color: rgb(255, 140, 60);"> Share-alt</span></td>
+								<td><span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(255, 140, 60);"> Exclamation-sign</span></td>
+								<td><span class="glyphicon glyphicon-gift" style="color: rgb(255, 140, 60);"> Gift</span></td>
+								<td><span class="glyphicon glyphicon-leaf" style="color: rgb(255, 140, 60);"> Leaf</span></td>
+								<td><span class="glyphicon glyphicon-fire" style="color: rgb(255, 140, 60);"> Fire</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-eye-open" style="color: rgb(255, 140, 60);"> Eye-open</span></td>
+								<td><span class="glyphicon glyphicon-eye-close" style="color: rgb(255, 140, 60);"> Eye-close</span></td>
+								<td><span class="glyphicon glyphicon-warning-sign" style="color: rgb(255, 140, 60);"> Warning-sign</span></td>
+								<td><span class="glyphicon glyphicon-plane" style="color: rgb(255, 140, 60);"> Plane</span></td>
+								<td><span class="glyphicon glyphicon-calendar" style="color: rgb(255, 140, 60);"> Calendar</span></td>
+								<td><span class="glyphicon glyphicon-random" style="color: rgb(255, 140, 60);"> Random</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-comment" style="color: rgb(255, 140, 60);"> Comment</span></td>
+								<td><span class="glyphicon glyphicon-magnet" style="color: rgb(255, 140, 60);"> Magnet</span></td>
+								<td><span class="glyphicon glyphicon-chevron-up" style="color: rgb(255, 140, 60);"> Chevron-up</span></td>
+								<td><span class="glyphicon glyphicon-chevron-down" style="color: rgb(255, 140, 60);"> Chevron-down</span></td>
+								<td><span class="glyphicon glyphicon-retweet" style="color: rgb(255, 140, 60);"> Retweet</span></td>
+								<td><span class="glyphicon glyphicon-shopping-cart" style="color: rgb(255, 140, 60);"> Shopping-cart</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-folder-close" style="color: rgb(255, 140, 60);"> Folder-close</span></td>
+								<td><span class="glyphicon glyphicon-folder-open" style="color: rgb(255, 140, 60);"> Folder-open</span></td>
+								<td><span class="glyphicon glyphicon-resize-vertical" style="color: rgb(255, 140, 60);"> Resize-vertical</span></td>
+								<td><span class="glyphicon glyphicon-resize-horizontal" style="color: rgb(255, 140, 60);"> Resize-horizontal</span></td>
+								<td><span class="glyphicon glyphicon-hdd" style="color: rgb(255, 140, 60);"> Hdd</span></td>
+								<td><span class="glyphicon glyphicon-bullhorn" style="color: rgb(255, 140, 60);"> Bullhorn</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-bell" style="color: rgb(255, 140, 60);"> Bell</span></td>
+								<td><span class="glyphicon glyphicon-certificate" style="color: rgb(255, 140, 60);"> Certificate</span></td>
+								<td><span class="glyphicon glyphicon-thumbs-up" style="color: rgb(255, 140, 60);"> Thumbs-up</span></td>
+								<td><span class="glyphicon glyphicon-thumbs-down" style="color: rgb(255, 140, 60);"> Thumbs-down</span></td>
+								<td><span class="glyphicon glyphicon-hand-right" style="color: rgb(255, 140, 60);"> Hand-right</span></td>
+								<td><span class="glyphicon glyphicon-hand-left" style="color: rgb(255, 140, 60);"> Hand-left</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-hand-up" style="color: rgb(255, 140, 60);"> Hand-up</span></td>
+								<td><span class="glyphicon glyphicon-hand-down" style="color: rgb(255, 140, 60);"> Hand-down</span></td>
+								<td><span class="glyphicon glyphicon-circle-arrow-right" style="color: rgb(255, 140, 60);"> Circle-arrow-right</span></td>
+								<td><span class="glyphicon glyphicon-circle-arrow-left" style="color: rgb(255, 140, 60);"> Circle-arrow-left</span></td>
+								<td><span class="glyphicon glyphicon-circle-arrow-up" style="color: rgb(255, 140, 60);"> Circle-arrow-up</span></td>
+								<td><span class="glyphicon glyphicon-circle-arrow-down" style="color: rgb(255, 140, 60);"> Circle-arrow-down</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-globe" style="color: rgb(255, 140, 60);"> Globe</span></td>
+								<td><span class="glyphicon glyphicon-wrench" style="color: rgb(255, 140, 60);"> Wrench</span></td>
+								<td><span class="glyphicon glyphicon-tasks" style="color: rgb(255, 140, 60);"> Tasks</span></td>
+								<td><span class="glyphicon glyphicon-filter" style="color: rgb(255, 140, 60);"> Filter</span></td>
+								<td><span class="glyphicon glyphicon-briefcase" style="color: rgb(255, 140, 60);"> Briefcase</span></td>
+								<td><span class="glyphicon glyphicon-fullscreen" style="color: rgb(255, 140, 60);"> glyphicon-fullscreen</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-dashboard" style="color: rgb(255, 140, 60);"> Dashboard</span></td>
+								<td><span class="glyphicon glyphicon-paperclip" style="color: rgb(255, 140, 60);"> Paperclip</span></td>
+								<td><span class="glyphicon glyphicon-heart-empty" style="color: rgb(255, 140, 60);"> Heart-empty</span></td>
+								<td><span class="glyphicon glyphicon-link" style="color: rgb(255, 140, 60);"> Link</span></td>
+								<td><span class="glyphicon glyphicon-phone" style="color: rgb(255, 140, 60);"> Phone</span></td>
+								<td><span class="glyphicon glyphicon-pushpin" style="color: rgb(255, 140, 60);"> Pushpin</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-usd" style="color: rgb(255, 140, 60);"> Usd</span></td>
+								<td><span class="glyphicon glyphicon-gbp" style="color: rgb(255, 140, 60);"> GBP</span></td>
+								<td><span class="glyphicon glyphicon-sort" style="color: rgb(255, 140, 60);"> Sort</span></td>
+								<td><span class="glyphicon glyphicon-sort-by-alphabet" style="color: rgb(255, 140, 60);"> Sort-by-alphabet</span></td>
+								<td><span class="glyphicon glyphicon-sort-by-alphabet-alt" style="color: rgb(255, 140, 60);"> Sort-by-alphabet-alt</span></td>
+								<td><span class="glyphicon glyphicon-sort-by-order" style="color: rgb(255, 140, 60);"> Sort-by-order</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-sort-by-order-alt" style="color: rgb(255, 140, 60);"> Sort-by-order-alt</span></td>
+								<td><span class="glyphicon glyphicon-sort-by-attributes" style="color: rgb(255, 140, 60);"> Sort-by-attributes</span></td>
+								<td><span class="glyphicon glyphicon-sort-by-attributes-alt" style="color: rgb(255, 140, 60);"> Sort-by-attributes-alt</span></td>
+								<td><span class="glyphicon glyphicon-unchecked" style="color: rgb(255, 140, 60);"> Unchecked</span></td>
+								<td><span class="glyphicon glyphicon-expand" style="color: rgb(255, 140, 60);"> Expand</span></td>
+								<td><span class="glyphicon glyphicon-collapse-down" style="color: rgb(255, 140, 60);"> Collapse-down</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-collapse-up" style="color: rgb(255, 140, 60);"> Collapse-up</span></td>
+								<td><span class="glyphicon glyphicon-log-in" style="color: rgb(255, 140, 60);"> Log-in</span></td>
+								<td><span class="glyphicon glyphicon-flash" style="color: rgb(255, 140, 60);"> Flash</span></td>
+								<td><span class="glyphicon glyphicon-log-out" style="color: rgb(255, 140, 60);"> Log-out</span></td>
+								<td><span class="glyphicon glyphicon-new-window" style="color: rgb(255, 140, 60);"> New-window</span></td>
+								<td><span class="glyphicon glyphicon-record" style="color: rgb(255, 140, 60);"> Record</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-save" style="color: rgb(255, 140, 60);"> Save</span></td>
+								<td><span class="glyphicon glyphicon-open" style="color: rgb(255, 140, 60);"> Open</span></td>
+								<td><span class="glyphicon glyphicon-saved" style="color: rgb(255, 140, 60);"> Saved</span></td>
+								<td><span class="glyphicon glyphicon-import" style="color: rgb(255, 140, 60);"> Import</span></td>
+								<td><span class="glyphicon glyphicon-export" style="color: rgb(255, 140, 60);"> Export</span></td>
+								<td><span class="glyphicon glyphicon-send" style="color: rgb(255, 140, 60);"> Send</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-floppy-disk" style="color: rgb(255, 140, 60);"> Floppy-disk</span></td>
+								<td><span class="glyphicon glyphicon-floppy-saved" style="color: rgb(255, 140, 60);"> Floppy-saved</span></td>
+								<td><span class="glyphicon glyphicon-floppy-remove" style="color: rgb(255, 140, 60);"> Floppy-remove</span></td>
+								<td><span class="glyphicon glyphicon-floppy-save" style="color: rgb(255, 140, 60);"> Floppy-save</span></td>
+								<td><span class="glyphicon glyphicon-floppy-open" style="color: rgb(255, 140, 60);"> Floppy-open</span></td>
+								<td><span class="glyphicon glyphicon-credit-card" style="color: rgb(255, 140, 60);"> Credit-card</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-transfer" style="color: rgb(255, 140, 60);"> Transfer</span></td>
+								<td><span class="glyphicon glyphicon-cutlery" style="color: rgb(255, 140, 60);"> Cutlery</span></td>
+								<td><span class="glyphicon glyphicon-header" style="color: rgb(255, 140, 60);"> Header</span></td>
+								<td><span class="glyphicon glyphicon-compressed" style="color: rgb(255, 140, 60);"> Compressed</span></td>
+								<td><span class="glyphicon glyphicon-earphone" style="color: rgb(255, 140, 60);"> Earphone</span></td>
+								<td><span class="glyphicon glyphicon-phone-alt" style="color: rgb(255, 140, 60);"> Phone-alt</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-tower" style="color: rgb(255, 140, 60);"> Tower</span></td>
+								<td><span class="glyphicon glyphicon-stats" style="color: rgb(255, 140, 60);"> Stats</span></td>
+								<td><span class="glyphicon glyphicon-sd-video" style="color: rgb(255, 140, 60);"> Sd-video</span></td>
+								<td><span class="glyphicon glyphicon-hd-video" style="color: rgb(255, 140, 60);"> Hd-video</span></td>
+								<td><span class="glyphicon glyphicon-subtitles" style="color: rgb(255, 140, 60);"> Subtitles</span></td>
+								<td><span class="glyphicon glyphicon-sound-stereo" style="color: rgb(255, 140, 60);"> Sound-stereo</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-sound-dolby" style="color: rgb(255, 140, 60);"> Sound-dolby</span></td>
+								<td><span class="glyphicon glyphicon-sound-dolby" style="color: rgb(255, 140, 60);"> Sound-dolby</span></td>
+								<td><span class="glyphicon glyphicon-sound-5-1" style="color: rgb(255, 140, 60);"> Sound-5-1</span></td>
+								<td><span class="glyphicon glyphicon-sound-6-1" style="color: rgb(255, 140, 60);"> Sound-6-1</span></td>
+								<td><span class="glyphicon glyphicon-sound-7-1" style="color: rgb(255, 140, 60);"> Sound-7-1</span></td>
+								<td><span class="glyphicon glyphicon-copyright-mark" style="color: rgb(255, 140, 60);"> Copyright-mark</span></td>
+							</tr>
+							<tr>
+								<td><span class="glyphicon glyphicon-registration-mark" style="color: rgb(255, 140, 60);"> Registration-mark</span></td>
+								<td><span class="glyphicon glyphicon-cloud-download" style="color: rgb(255, 140, 60);"> Cloud-download</span></td>
+								<td><span class="glyphicon glyphicon-cloud-upload" style="color: rgb(255, 140, 60);"> Cloud-upload</span></td>
+								<td><span class="glyphicon glyphicon-tree-conifer" style="color: rgb(255, 140, 60);"> Tree-conifer</span></td>
+								<td><span class="glyphicon glyphicon-tree-deciduous" style="color: rgb(255, 140, 60);"> Tree-deciduous</span></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script src="./Customize 字形图标（Glyphicons） - 菜鸟教程_files/bootstrap.min.js.下载"></script>
+		<script src="./Customize 字形图标（Glyphicons） - 菜鸟教程_files/change.js.下载"></script>
+
+	</body>
+
+</html>

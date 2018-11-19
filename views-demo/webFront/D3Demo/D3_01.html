@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8" />
+<head>
+    <script type="text/javascript" src="js/d3.js"></script>
+</head>
+<body>
+    <div id="viz"></div>
+    <!--<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)"/>
+	</svg>-->
+	<!--<svg>
+		<rect x="20" y="20" rx="10" ry="10" width="100" height="100" style="fill:red;stroke:blue;stroke-width:2;">
+	</svg>-->
+	<!--<svg>
+	  <ellipse cx="240" cy="300" rx="220" ry="300" style="fill:yellow"/>
+	  <ellipse cx="220" cy="300" rx="190" ry="200" style="fill:blue"/>
+	</svg>-->
+	<!--<svg>
+		<polyline points="10 10 10 200 200 200 200 10" style="fill:red;"></polyline>
+	</svg>-->
+    <script type="text/javascript">
+
+    var sampleSVG = d3.select("#viz")
+        .append("svg")
+        .attr("width", 100)
+        .attr("height", 100);    
+
+    sampleSVG.append("circle")
+        .style("stroke", "gray")
+        .style("fill", "white")
+        .attr("r", 40)
+        .attr("cx", 50)
+        .attr("cy", 50)
+        //.on("mousedown", animate)
+        .on("mouseover", function(){d3.select(this).style("fill", "aliceblue");})
+        .on("mouseout", function(){d3.select(this).style("fill", "white");})
+        .on("mousedown", animateFirstStep);
+
+//	function animate() {
+//	    d3.select(this).transition()
+//	        .duration(1000)
+//	        .attr("r", 10)
+//	      .transition()
+//	        .delay(1000)
+//	        .attr("r", 40);
+//	};
+	
+	  
+
+	function animateFirstStep(){
+	    d3.select(this)
+	      .transition()            
+	        .delay(0)            
+	        .duration(1000)
+	        .attr("r", 10)
+	        .each("end", animateSecondStep);
+	};
+	
+	function animateSecondStep(){
+	    d3.select(this)
+	      .transition()
+	        .duration(1000)
+	        .attr("r", 40);
+	};
+    </script>
+</body>
+</html>

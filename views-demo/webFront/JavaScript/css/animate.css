@@ -1,0 +1,14 @@
+.example_path{
+	position:relative;
+	overflow:hidden;
+	width:270px;
+	height:30px;
+	border:2px solid #000;
+}
+.example_block{
+	position:absolute;
+	background-color:blue;
+	width:30px;
+	height:30px;
+	white-space:nowrap;
+}
