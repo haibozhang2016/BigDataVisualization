@@ -1,0 +1,48 @@
+/* pon style */
+.expandIcon{
+	display: inline;
+	float: right;
+}
+.ponChoose{
+	display: inline;
+	float: right;
+}
+.monitorClass{
+	font-size: 13px;
+	height: 28px;
+	width: 64px;
+	line-height: 26px;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+.monitorClass:hover{
+	/*border: 1px solid grey;*/
+	background-color: #0092dd;
+ 	border-color: #0092dd;
+ 	color: white;
+}
+.basicInfoClass{
+	font-size: 14px;
+}
+.basicInfoClass tr{
+	height: 28px;
+}
+.basicInfoClass tr >td{
+	/*border: 1px solid red;*/
+	width: 25%;
+}
+.greeClass{
+	color: green;
+}
+/*账号样式*/
+.accountClass{
+	background-color: #d9534f;
+	height: 24px;
+	line-height: 20px;
+	width: 42px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+

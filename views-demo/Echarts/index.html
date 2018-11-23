@@ -5,7 +5,7 @@
     <title>ECharts</title>
     <!-- 引入 echarts.js -->
     <script type="text/javascript" src="js/echarts.js" ></script>
-    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
 <body>
     <div style="margin: 10px 0px 50px 200px;">
@@ -22,7 +22,7 @@
        		title: {
        			text: "实时监控图表",
        			textStyle: {
-					fontSize: 15,
+					fontSize: 15
 				}
        		},
 	       	tooltip: {},
@@ -47,7 +47,7 @@
 	    	title: {
        			text: "实时监控图表",
        			textStyle: {
-					fontSize: 15,
+					fontSize: 14,
 				}
        		},
 	        tooltip : {
@@ -70,11 +70,13 @@
 	            }
 	        },
 	        calculable : true,
-	        legend: {
+	        legend: { //图例说明文字设置
 	        	show: true,
-	        	zlevel: 10,
-	            data:['宽带业务', 'IPTV业务'],
-	            itemGap: 5
+	            data:['宽带', 'IPTV'], //需要和series对上才能显示
+	            itemGap: 5,
+	            x: 'center',
+	            y: 'top',
+	            selectedMode: 'multiple', //选择模式，默认开启图例开关，可选single，multiple
 	        },
 	        grid: {
 	            top: '16%',
@@ -116,7 +118,7 @@
 	        dataZoom: [
 	            {
 	                show: true,
-	                start: 20,
+	                start: 0,
 	                end: 100
 	            }
 	        ],
@@ -135,5 +137,45 @@
 	    };
 	    myChart.setOption(option);
 	});
+	
+	function arrFilter(arr){
+		return arr.filter(function(element, index, self){
+		    return self.indexOf(element) === index;
+		});
+	}
+	
+	function arrMap(arr){
+		return arr.map(function(value, index, array){
+			return 2 * value;
+		})
+	}
+	
+	// 希尔排序
+	function shellSort(array){
+	    var i = 0, j = 0, f, tem, key;
+	    var tempLen = len % temp > 0 ? parseInt(len/temp) + 1 : len/temp;
+	    for(;i < temp; i++){// 依次循环列
+	      for(j=1;temp * j + i < len; j++){
+	        //依次循环每列的每行
+	        tem = f = temp * j + i;
+	        key = array[f];
+	        while((tem-=temp) >= 0){
+	          // 依次向上查找
+	          if(array[tem] > key){
+	            array[tem+temp] = array[tem];
+	          }else{
+	            break;
+	          }
+	        }
+	        array[tem + temp] = key;
+	      }
+	    }
+	    return array;
+	 };
+	
+	(function(){
+		var arr = ["S11", "S21", "S11", "S16", "S13", "S19", "S17", "S11", "S15", "S16", "S17", "S20", "S8", "S18", "S6", "S14", "S12", "S15", "S17", "S16", "S11", "S19", "S18", "S17", "S15", "S16"];
+		console.log(arrMap(arr));
+	})();
 </script>
 </html>
